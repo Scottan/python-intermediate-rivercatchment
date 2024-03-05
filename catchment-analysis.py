@@ -2,8 +2,9 @@
 """Software for managing and tracking environmental data from our field project."""
 
 import argparse
+import os
 
-from catchment import models, views
+from catchment import models, views, compute_data
 
 
 def main(args):
@@ -16,6 +17,9 @@ def main(args):
     InFiles = args.infiles
     if not isinstance(InFiles, list):
         InFiles = [args.infiles]
+
+    if args.full_data_analysis:
+        compute_data.analyse_data(os.path.dirname(InFiles[0]))
 
     for filename in InFiles:
         measurement_data = models.read_variable_from_csv(filename)
@@ -39,6 +43,8 @@ if __name__ == "__main__":
         nargs='+',
         help='Input CSV(s) containing measurement data')
 
+    parser.add_argument('--full-data-analysis', action='store_true', dest='full_data_analysis')
+    
     args = parser.parse_args()
 
     main(args)
