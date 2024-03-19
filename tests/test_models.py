@@ -137,7 +137,8 @@ def test_daily_mean(test_input, expected_output):
         ),
     ])
 def test_daily_max(test_input, expected_output):
-    """Test that max function works for an array of positive integers."""
+    """Test that max function works for an array of positive integers.
+    """
     from catchment.models import daily_max
     pdt.assert_frame_equal(daily_max(test_input), expected_output)
 
