@@ -44,7 +44,6 @@ def main(args):
                      'daily average': models.daily_mean(measurement_data),
                      'daily max': models.daily_max(measurement_data),
                      'daily min': models.daily_min(measurement_data)}
->>>>>>> fda-scottan
 
         views.visualize(view_data)
 
