@@ -17,21 +17,6 @@ def main(args):
     InFiles = args.infiles
     if not isinstance(InFiles, list):
         InFiles = [args.infiles]
-<<<<<<< HEAD
-
-    if args.full_data_analysis:
-        compute_data.analyse_data(os.path.dirname(InFiles[0]))
-
-    for filename in InFiles:
-        measurement_data = models.read_variable_from_csv(filename)
-
-        view_data = {
-            'daily sum': models.daily_total(measurement_data),
-            'daily average': models.daily_mean(measurement_data),
-            'daily max': models.daily_max(measurement_data),
-            'daily min': models.daily_min(measurement_data)
-        }
-=======
     
     if args.full_data_analysis:
         _, extension = os.path.splitext(InFiles[0])
