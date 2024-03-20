@@ -38,8 +38,6 @@ def read_variable_from_csv(filename):
 
     return newdataset
 
-<<<<<<< HEAD
-=======
 def read_variable_from_json(filename):
     """Reads a named variable from a JSON file, and returns a
     pandas dataframe containing that variable. The JSON file must contain
@@ -65,7 +63,6 @@ def read_variable_from_json(filename):
     newdataset = newdataset.sort_index()
 
     return newdataset
->>>>>>> e9ba911 (add read_variable_from_json function)
 
 def read_variable_from_json(filename):
     """Reads a named variable from a JSON file, and returns a
