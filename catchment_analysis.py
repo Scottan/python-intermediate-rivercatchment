@@ -17,7 +17,7 @@ def main(args):
     InFiles = args.infiles
     if not isinstance(InFiles, list):
         InFiles = [args.infiles]
-    
+
     if args.full_data_analysis:
         _, extension = os.path.splitext(InFiles[0])
         if extension == '.json':
@@ -38,8 +38,8 @@ def main(args):
         views.visualize(graph_data)
 
     for filename in InFiles:
-        measurement_data = models.read_variable_from_csv(filename)
- 
+        measurement_data = models.read_variable_from_csv(filename, args.measurements)
+
         view_data = {'daily sum': models.daily_total(measurement_data),
                      'daily average': models.daily_mean(measurement_data),
                      'daily max': models.daily_max(measurement_data),
@@ -47,17 +47,38 @@ def main(args):
 
         views.visualize(view_data)
 
-if __name__ == "__main__":
+
+def create_argparse():
     parser = argparse.ArgumentParser(
         description='A basic environmental data management system')
-    
+
+    req_group = parser.add_argument_group('required arguments')
+
     parser.add_argument(
         'infiles',
         nargs='+',
-        help='Input CSV(s) containing measurement data')
+        help='Input CSV(s) or JSON(s) containing measurement data')
 
-    parser.add_argument('--full-data-analysis', action='store_true', dest='full_data_analysis')
-    
+    req_group.add_argument(
+        '-m', '--measurements',
+        help = 'Name of measurment series to load',
+        required=True
+    )
+
+    parser.add_argument(
+        '-f',
+        '--full-data-analysis',
+        action='store_true',
+        dest='full_data_analysis'
+    )
+
+    return parser
+
+
+if __name__ == "__main__":
+
+    parser = create_argparse()
+
     args = parser.parse_args()
-    
+
     main(args)
