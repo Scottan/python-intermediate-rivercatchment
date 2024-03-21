@@ -1,5 +1,5 @@
 # Rivercatch
-![Continuous Integration build in GitHub Actions](https://github.com/scottan/python-intermediate-catchment/workflows/CI/badge.svg?branch=develop)
+![Continuous Integration build in GitHub Actions](https://github.com/scottan/python-intermediate-catchment/actions/workflows/main.yml/badge.svg)
 
 
 # Introduction
