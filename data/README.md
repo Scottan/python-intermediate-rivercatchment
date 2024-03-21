@@ -2,7 +2,6 @@
 ![Continuous Integration build in GitHub Actions](https://github.com/scottan/python-intermediate-catchment/workflows/CI/badge.svg?branch=main)
 
 
-
 # Lowland Catchment Research (LOCAR) Data
 
 The data included here are taken from the [LOCAR](https://catalogue.ceh.ac.uk/documents/db9f6ef9-9512-4f39-aca3-3c55f51a7487) collection. These are continuous measurements of rainfall and river metrics for 6 measurement sites during December 2015. The data is released under the [Open Government Licence](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)
