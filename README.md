@@ -1,3 +1,7 @@
+# Rivercatch
+![Continuous Integration build in GitHub Actions](https://github.com/scottan/python-intermediate-catchment/workflows/CI/badge.svg?branch=develop)
+
+
 # Introduction
 
 This is a template software project repository used by the Earth Science focused [Intermediate Research Software Development Skills In Python](https://carpentries-incubator.github.io/python-intermediate-development-earth-sciences) course.
