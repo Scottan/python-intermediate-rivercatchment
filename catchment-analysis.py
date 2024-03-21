@@ -53,12 +53,19 @@ def create_parser():
     parser = argparse.ArgumentParser(
         description='A basic environmental data management system')
 
+    req_group = parser.add_argument_group('required arguments')
+
     parser.add_argument(
         'infiles',
         nargs='+',
         help='Input CSV(s) containing measurement data')
 
     parser.add_argument('--full-data-analysis', action='store_true', dest='full_data_analysis')
+
+    req_group.add_argument(
+        '-m', '--measurements',
+        help = 'Name of measurement data series to load',
+        required = True)
 
     return parser
 
